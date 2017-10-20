@@ -1,74 +1,34 @@
 /*CSS by dici*/
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-h1{
-	color: white;
-	
-}
-
 *:before, *:after {
   content: '';
   display: block;
   position: absolute;
   box-sizing: border-box;
 }
-
 html, body {
   height: 100vh;
   background: black;
   overflow: hidden;
 }
-
 .landscape {
   position: relative;
   height: 600px;
   background: black;
   overflow: hidden;
 }
-
 .landscape * {
   position: absolute;
   bottom: 0;
 }
-
-
-.d {
-  left: 50%;
-  z-index: 1;
-  margin-left: -5px;
-  width: 11px;
-  height: 12px;
-  border: 1px solid #33261a;
-  border-bottom: 0;
-  background: #443322;
-}
-
-.d:before {
-  left: 4px;
-  width: 1px;
-  height: 12px;
-  background: #33261a;
-}
-
-.d:after {
-  top: 4px;
-  left: 2px;
-  width: 5px;
-  height: 3px;
-  border-left: 1px solid #33261a;
-  border-right: 1px solid #33261a;
-}
-
 @media only screen and (max-height: 450px) {
   .landscape {
     margin-top: -220px;
   }
-
 }
 canvas {
   position: absolute;
