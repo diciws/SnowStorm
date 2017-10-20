@@ -1,0 +1,108 @@
+$color: #864;
+$color-d2: darken($color, 5%);
+$color-d3: darken($color, 10%);
+$color-d5: darken($color, 15%);
+$color-d8: darken($color, 20%);
+$color-d10: darken($color, 25%);
+
+$h: darken($color, 18%);
+$v: darken($color, 8%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  content: '';
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background: $color-d10;
+  overflow: hidden;
+}
+
+.landscape {
+  position: relative;
+  height: 600px;
+  background: $color;
+  overflow: hidden;
+}
+
+.landscape * {
+  position: absolute;
+  bottom: 0;
+}
+
+
+@function winv($c) {
+  $val: 0px 0px $c;
+  @for $i from 1 through 25 {
+    $val: #{$val}, #{$i*5}px 0 $v;
+  }
+  @return $val;
+}
+
+@mixin wv($c) {
+  box-shadow: winv($c);
+}
+
+
+@function winh($c) {
+  $val: 0px 0px $c;
+  @for $j from 1 through 50 {
+    $val: #{$val}, 0 #{$j*-10}px $h;
+  }
+  @return $val;
+}
+
+@mixin wh($c) {
+  box-shadow: winh($c);
+}
+
+
+.d {
+  left: 50%;
+  z-index: 1;
+  margin-left: -5px;
+  width: 11px;
+  height: 12px;
+  border: 1px solid $color-d10;
+  border-bottom: 0;
+  background: $color-d8;
+}
+
+.d:before {
+  left: 4px;
+  width: 1px;
+  height: 12px;
+  background: $color-d10;
+}
+
+.d:after {
+  top: 4px;
+  left: 2px;
+  width: 5px;
+  height: 3px;
+  border-left: 1px solid $color-d10;
+  border-right: 1px solid $color-d10;
+}
+
+
+@media only screen and (max-height: 450px) {
+  .landscape {
+    margin-top: -220px;
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
