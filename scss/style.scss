@@ -52,7 +52,6 @@ html, body {
   box-shadow: winv($c);
 }
 
-
 @function winh($c) {
   $val: 0px 0px $c;
   @for $j from 1 through 50 {
@@ -63,41 +62,6 @@ html, body {
 
 @mixin wh($c) {
   box-shadow: winh($c);
-}
-
-
-.d {
-  left: 50%;
-  z-index: 1;
-  margin-left: -5px;
-  width: 11px;
-  height: 12px;
-  border: 1px solid $color-d10;
-  border-bottom: 0;
-  background: $color-d8;
-}
-
-.d:before {
-  left: 4px;
-  width: 1px;
-  height: 12px;
-  background: $color-d10;
-}
-
-.d:after {
-  top: 4px;
-  left: 2px;
-  width: 5px;
-  height: 3px;
-  border-left: 1px solid $color-d10;
-  border-right: 1px solid $color-d10;
-}
-
-
-@media only screen and (max-height: 450px) {
-  .landscape {
-    margin-top: -220px;
-  }
 }
 
 canvas {
